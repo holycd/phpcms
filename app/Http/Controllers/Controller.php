@@ -12,6 +12,10 @@ abstract class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /**
+     * @param string $model
+     * @return BaseModel| \App\Models\$model . Model
+     */
     public function getModel($model) {
         $class = 'App\Models\\'. $model . 'Model';
         if (class_exists($class)) {
