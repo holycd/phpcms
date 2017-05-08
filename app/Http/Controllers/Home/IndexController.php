@@ -14,12 +14,20 @@ use Zizaco\Entrust\Entrust;
 class IndexController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     public function index(Request $request) {
         $user = \Auth::user();
 //        dump(get_class_methods($user));
         return view('index.index');
+    }
+
+    public function content1() {
+        return view('content.content1');
+    }
+
+    public function content2() {
+        return view('content.content2');
     }
 }
